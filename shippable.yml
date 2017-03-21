@@ -11,6 +11,6 @@ build:
 
 integrations:
   hub:
-    - integrationName: "shipdeploy"
+    - integrationName: "docker"
       type: docker
 

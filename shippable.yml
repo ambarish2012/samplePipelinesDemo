@@ -11,8 +11,8 @@ build:
     - docker ps | sed -n 2p
     - docker ps | sed -n 2p | awk '{print $NF}'
     - docker logs --help
-    - docker ps | sed -n 2p | awk '{print $NF}' | xargs docker logs --details
-    - docker logs --details c.exec."$REPO_NAME"."$BUILD_NUMBER"."$SHIPPABLE_JOB_NUMBER"
+    - docker ps | sed -n 2p | awk '{print $NF}' | xargs docker logs --tail=all
+    - docker logs  --tail=all c.exec."$REPO_NAME"."$BUILD_NUMBER"."$SHIPPABLE_JOB_NUMBER"
 
 integrations:
   hub:

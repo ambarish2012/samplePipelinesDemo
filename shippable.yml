@@ -4,10 +4,12 @@ build:
   ci:
     - echo 'CI Running'
     - export IMAGE_NAME=shippablesamples/samplepipelinesdemo
-    - ./build.sh
 
   post_ci:
     - docker ps
+    - docker ps | sed -n 1p
+    - docker ps | sed -n 2p
+    - docker ps | sed -n 2p | awk '{print $NF}'
     - docker ps | sed -n 2p | awk '{print $NF}' | xargs docker logs --details
 
 integrations:

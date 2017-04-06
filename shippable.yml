@@ -1,11 +1,19 @@
 language: none
 
+addons:
+  firefox: "29.0"
+  selenium: "2.52.0"
+
+services:
+  - selenium
+
 build:
   ci:
     - echo 'CI Running'
     - export IMAGE_NAME=shippablesamples/samplepipelinesdemo
 
   post_ci:
+    - Xvfb :1 -screen 0 1600x1200x32
     - docker ps
     - docker ps | sed -n 1p
     - docker ps | sed -n 2p

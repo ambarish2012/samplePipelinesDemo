@@ -2,7 +2,7 @@ language: none
 
 addons:
   firefox: "29.0"
-  selenium: "2.52.0"
+  selenium: "3.3.1"
 
 services:
   - selenium

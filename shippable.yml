@@ -22,6 +22,13 @@ build:
     - docker ps | sed -n 2p | awk '{print $NF}' | xargs docker logs --tail=all
     - docker logs  --tail=all c.exec."$REPO_NAME"."$BUILD_NUMBER"."$SHIPPABLE_JOB_NUMBER"
 
+  after_succcess: |
+    if [ "$BRANCH" == "master" ]
+        then docker ps
+        docker ps | sed -n 1p
+    fi
+
+
 integrations:
   hub:
     - integrationName: "docker"

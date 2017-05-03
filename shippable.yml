@@ -1,31 +1,4 @@
-language: none
-
-addons:
-  firefox: "29.0"
-
-build:
-  ci:
-    - echo 'CI Running'
-    - export IMAGE_NAME=shippablesamples/samplepipelinesdemo
-
-  post_ci:
-    - docker ps
-    - docker ps | sed -n 1p
-    - docker ps | sed -n 2p
-    - docker ps | sed -n 2p | awk '{print $NF}'
-    - docker logs --help
-    - docker ps | sed -n 2p | awk '{print $NF}' | xargs docker logs --tail=all
-    - docker logs  --tail=all c.exec."$REPO_NAME"."$BUILD_NUMBER"."$SHIPPABLE_JOB_NUMBER"
-
-  after_succcess: |
-    if [ "$BRANCH" == "master" ]
-        then docker ps
-        docker ps | sed -n 1p
-    fi
-
-
-integrations:
-  hub:
-    - integrationName: "docker"
-      type: docker
-
+branches:
+  only:
+    - test-branch
+    

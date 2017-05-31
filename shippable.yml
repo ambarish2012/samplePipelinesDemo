@@ -1,26 +1,17 @@
-build_environment: Centos 6.5
-
 language: php
 
 php:
   - 5.6
 
-#node_js:
-# - 6.9.4
 
 addons:
   firefox: "48.0"
 
 services:
-  - mysql
-  - elasticsearch
-  - selenium
+  - postgres
 
-before_install:
-  - php -v
-  - mkdir -p ~/.nvm/versions
-  - node --version
-  - npm -v
-  - shippable_retry sudo npm install -g protractor
-
-  
+build:
+  ci:
+    - echo $SHIPPABLE_POSTGRES_VERSION
+    - echo ${SHIPPABLE_POSTGRES_VERSION}
+      

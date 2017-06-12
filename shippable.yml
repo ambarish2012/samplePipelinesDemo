@@ -16,6 +16,6 @@ build:
     - echo ${SHIPPABLE_POSTGRES_VERSION}
     - echo $SHIPPABLE_POSTGRES_BINARY
     - echo ${SHIPPABLE_POSTGRES_BINARY}
-post_ci:
+  post_ci:
     - exit 0;
       

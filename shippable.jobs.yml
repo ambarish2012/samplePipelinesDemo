@@ -1,4 +1,13 @@
 jobs:
+  - name: samplePipelinesDemo_runCI
+    type: runCI
+    steps:
+      - IN: nightly
+    on_success:
+      - script: echo 'on success !!!!!'
+    on_failure:
+      - script: echo 'Failed job .... :('
+      
   - name: pipelines-demo-manifest
     type: manifest
     steps:

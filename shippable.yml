@@ -15,7 +15,6 @@ build:
     - node --version
     - npm -v
     - npm install npm@latest -g
-    - npm -v
     - npm install react
     - npm view react version
     

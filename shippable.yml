@@ -6,6 +6,7 @@ node_js:
 build:
   ci:
     - node --version
+    - sudo apt-get install npm
     - npm install npm@latest -g
     - npm -v
     - npm install react

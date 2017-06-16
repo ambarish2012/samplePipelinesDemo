@@ -5,6 +5,8 @@ node_js:
 
 build:
   ci:
+    - sudo apt-get autoremove
+    - dpkg --get-selections | grep hold
     - sudo apt-get remove nodejs
     - sudo apt-get update
     - sudo apt-get install nodejs

@@ -14,7 +14,10 @@ build:
     - sudo aptitude install npm -y
     - node --version
     - npm -v
-    - npm install npm@latest -g
+    - cd ~
+    - npm install npm@latest
+    - rm -rf /usr/local/lib/node_modules
+    - mv node_modules /usr/local/lib/
     - npm install react
     - npm view react version
     

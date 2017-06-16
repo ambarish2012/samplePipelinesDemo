@@ -5,7 +5,12 @@ node_js:
 
 build:
   ci:
+    - sudo apt-get remove nodejs
+    - sudo apt-get update
+    - sudo apt-get install nodejs
+    - sudo apt-get install npm
     - node --version
+    - npm -v
     - npm install npm@latest -g
     - npm -v
     - npm install react

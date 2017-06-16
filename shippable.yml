@@ -6,6 +6,7 @@ node_js:
 build:
   ci:
     - node --version
+    - npm uninstall npm -g
     - npm install npm@latest -g
     - npm -v
     - npm install react

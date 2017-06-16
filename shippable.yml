@@ -11,7 +11,7 @@ build:
     - sudo apt-get install aptitude
     - sudo apt-get remove nodejs
     - sudo apt-get install nodejs
-    - sudo aptitude install npm
+    - sudo aptitude install npm -y
     - node --version
     - npm -v
     - npm install npm@latest -g

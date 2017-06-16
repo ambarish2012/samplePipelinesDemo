@@ -6,9 +6,8 @@ node_js:
 build:
   ci:
     - node --version
-    - npm install -g npm
-    - npm install semver
-    - npm --version
+    - npm install npm@latest -g
+    - npm -v
     - npm install react
     - npm view react version
     
